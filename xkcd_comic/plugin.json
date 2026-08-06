@@ -1,0 +1,67 @@
+{
+  "tesserae_compat": "1.x",
+  "name": "XKCD Comic",
+  "version": "0.1.3",
+  "kind": "widget",
+  "description": "Latest, random, or a specific XKCD comic. The hovertext prints as a visible caption under the comic instead of a mouseover-only tooltip, since e-ink has no cursor. Data from xkcd.com's JSON endpoint, no API key.",
+  "icon": "ph-image-square",
+  "supports": { "sizes": ["sm", "md", "lg"] },
+  "cell_options": [
+    {
+      "name": "mode",
+      "type": "select",
+      "label": "Comic",
+      "default": "latest",
+      "choices": [
+        { "value": "latest", "label": "Latest" },
+        { "value": "random", "label": "Random" },
+        { "value": "fixed", "label": "Specific number" }
+      ]
+    },
+    {
+      "name": "comic_number",
+      "type": "number",
+      "label": "Comic number (Specific mode)",
+      "default": 353
+    },
+    {
+      "name": "random_refresh_hours",
+      "type": "number",
+      "label": "Hours between new random picks",
+      "default": 24
+    },
+    {
+      "name": "show_title",
+      "type": "boolean",
+      "label": "Show comic title",
+      "default": true
+    },
+    {
+      "name": "show_hovertext",
+      "type": "boolean",
+      "label": "Show hovertext caption",
+      "default": true
+    }
+  ],
+  "render": { "needs_network": true },
+  "requires": ["network:xkcd.com"],
+  "data_schema": {
+    "color": "#7F8CAA",
+    "fields": [
+      { "name": "num", "type": "num", "label": "Comic number" },
+      { "name": "title", "type": "str", "label": "Title" },
+      { "name": "img", "type": "str", "label": "Image URL" },
+      { "name": "alt", "type": "str", "label": "Hovertext" },
+      { "name": "date", "type": "str", "label": "Publish date" },
+      { "name": "link_page", "type": "str", "label": "xkcd.com page" }
+    ],
+    "sample": {
+      "num": 353,
+      "title": "Python",
+      "img": "https://imgs.xkcd.com/comics/python.png",
+      "alt": "I wrote 20 short programs in Python yesterday. It was wonderful. Perl, I'm leaving you.",
+      "date": "2007-08-06",
+      "link_page": "https://xkcd.com/353/"
+    }
+  }
+}
