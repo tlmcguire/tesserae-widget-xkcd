@@ -1,7 +1,7 @@
 {
   "tesserae_compat": "1.x",
   "name": "XKCD Comic",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "kind": "widget",
   "description": "Latest, random, or a specific XKCD comic. The hovertext prints as a visible caption under the comic instead of a mouseover-only tooltip, since e-ink has no cursor. Data from xkcd.com's JSON endpoint, no API key.",
   "icon": "ph-image-square",

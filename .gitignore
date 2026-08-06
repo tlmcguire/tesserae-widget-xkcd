@@ -2,3 +2,10 @@ CATALOG_PR.md
 .DS_Store
 __pycache__/
 *.pyc
+
+# Catalog screenshots belong in the dmellok/tesserae-widgets PR, not in
+# this widget's own repo: this repo's tags are what the catalog's
+# release.tarball_url points at, and the installer's bundle-layout
+# auto-detection treats every top-level folder as a required plugin
+# folder. An extra screenshots/ folder here breaks every real install.
+screenshots/
